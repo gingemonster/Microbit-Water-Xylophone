@@ -48,7 +48,7 @@ RESET              = 0x00
 class PCA9685(object):
     """PCA9685 PWM LED/servo controller."""
 
-    def __init__(self, i2c, address=PCA9685_ADDRESS):
+    def __init__(self, address=PCA9685_ADDRESS):
         """Initialize the PCA9685."""
         self.address = address
         i2c.write(self.address, bytearray([MODE1, RESET])) # reset not sure if needed but other libraries do it
