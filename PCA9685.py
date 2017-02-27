@@ -28,9 +28,6 @@ import math, ustruct
 PCA9685_ADDRESS    = 0x40
 MODE1              = 0x00
 MODE2              = 0x01
-SUBADR1            = 0x02
-SUBADR2            = 0x03
-SUBADR3            = 0x04
 PRESCALE           = 0xFE
 LED0_ON_L          = 0x06
 LED0_ON_H          = 0x07
@@ -42,10 +39,8 @@ ALL_LED_OFF_L      = 0xFC
 ALL_LED_OFF_H      = 0xFD
 
 # Bits:
-RESTART            = 0x80
 SLEEP              = 0x10
 ALLCALL            = 0x01
-INVRT              = 0x10
 OUTDRV             = 0x04
 RESET              = 0x00
 
