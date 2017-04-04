@@ -15,12 +15,13 @@ def playnote(sc, smap, note, numticks, ticklength):
 radio.on()
 sc = servo.Servos()
 # http://www.musicnotes.com/SheetMusic/mtd.asp?ppn=MN0127456
-swt = ('d4', 'd4', 'd4', 'g4:6', 'd5:6', 'c5', 'b5', 'a4', 'g5:6', 'd5:3', 'c5', 'b5', 'a4', 'g5:6', 'd5:3', 'c5', 'b5', 'c5', 'a4:6')
-smap = ('d4', 'g4', 'a4', 'c5', 'd5', 'g5', 'b5')
+swt = ('a4:2', 'b4:2', 'g4', 'a4:2', 'c5:2', 'd5:2', 'b4', 'c5:2', 'b4:2')
+smap = ('g4', 'a4', 'b4', 'c5', 'd5')
 
 while True:
     incoming = radio.receive()
     if incoming == 'dingdong' or button_a.was_pressed():
-        for x in swt:
-            y = x.split(':')
-            playnote(sc, smap, y[0], len(y) > 1 and int(y[1]) or 1, 100)
+        for _ in range(5):
+            for x in swt:
+                y = x.split(':')
+                playnote(sc, smap, y[0], len(y) > 1 and int(y[1]) or 1, 200)
